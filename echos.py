@@ -97,6 +97,13 @@ for this_cycle in total.cycle:
             
             x = roll_substat(echo)
             echo.substats[i] = x
+
+            """ uncomment to see how much worse fishing for first roll is
+            if x not in must_have_substats and i < 1:    
+                this_cycle.tuner_needed += (i+1)*10*0.7
+                this_cycle.exp_needed += get_exp_used(i)*0.25
+                break
+            """
             
             if x in must_have_substats:
                 echo.number_of_must += 1
